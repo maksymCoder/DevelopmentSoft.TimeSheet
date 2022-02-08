@@ -1,0 +1,2 @@
+# DevelopmentSoft.TimeSheet
+study project
