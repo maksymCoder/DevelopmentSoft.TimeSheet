@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>TimeSheet.Api</AssemblyName>
+    <RootNamespace>TimeSheet.Api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TimeSheet.App\TimeSheet.App.csproj" />
+    <ProjectReference Include="..\TimeSheet.DataAccess.csv\TimeSheet.DataAccess.CSV.csproj" />
+  </ItemGroup>
+
+
+</Project>
