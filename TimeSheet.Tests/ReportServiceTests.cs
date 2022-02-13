@@ -3,7 +3,6 @@ using NUnit.Framework;
 using TimeSheet.App.Services;
 using TimeSheet.Domain.Models;
 using System;
-using TimeShieet.Domain.Models;
 
 namespace TimeSheet.Tests
 {
