@@ -1,6 +1,6 @@
-﻿using TimeSheet.Domain.Models;
+﻿
 
-namespace TimeShieet.Domain.Models
+namespace TimeSheet.Domain.Models
 {
     public interface ITimeSheetRepository
     {

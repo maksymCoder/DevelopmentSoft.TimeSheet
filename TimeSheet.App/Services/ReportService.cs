@@ -2,11 +2,10 @@
 using TimeSheet.Domain.Models;
 using System.Collections.Generic;
 using System.Linq;
-using TimeShieet.Domain.Models;
 
 namespace TimeSheet.App.Services
 {
-    public class ReportService
+    public class ReportService:IEmployeeReportService
     {
         private const decimal MAX_WORKING_HOURS_PER_MONTH = 160;
         private const decimal MAX_WORKING_HOURS_PER_DAY = 8;

@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeSheet.Api", "TIimeSheet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeSheet.Tests", "TimeSheet.Tests\TimeSheet.Tests.csproj", "{F387F33B-CC98-4BDB-8638-52C7563729EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeShieet.Domain", "TimeShieet.Domain\TimeShieet.Domain.csproj", "{3AD093BB-5830-41A5-9338-76F47F6AF273}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeSheet.Domain", "TimeShieet.Domain\TimeSheet.Domain.csproj", "{3AD093BB-5830-41A5-9338-76F47F6AF273}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeSheet.App", "TimeSheet.App\TimeSheet.App.csproj", "{8708B4E5-AF2C-40D8-A64B-8CC94A297319}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeSheet.App", "TimeSheet.App\TimeSheet.App.csproj", "{8708B4E5-AF2C-40D8-A64B-8CC94A297319}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeSheet.DataAccess.CSV", "TimeSheet.DataAccess.csv\TimeSheet.DataAccess.CSV.csproj", "{8DE753D2-D720-442A-9D87-9CC4F331674C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeSheet.DataAccess.CSV", "TimeSheet.DataAccess.csv\TimeSheet.DataAccess.CSV.csproj", "{8DE753D2-D720-442A-9D87-9CC4F331674C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
