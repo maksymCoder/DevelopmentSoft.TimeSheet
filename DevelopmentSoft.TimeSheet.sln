@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeSheet.Domain", "TimeShi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeSheet.App", "TimeSheet.App\TimeSheet.App.csproj", "{8708B4E5-AF2C-40D8-A64B-8CC94A297319}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeSheet.DataAccess.CSV", "TimeSheet.DataAccess.csv\TimeSheet.DataAccess.CSV.csproj", "{8DE753D2-D720-442A-9D87-9CC4F331674C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeSheet.DataAccess.csv", "TimeSheet.DataAccess.csv\TimeSheet.DataAccess.csv.csproj", "{8DE753D2-D720-442A-9D87-9CC4F331674C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

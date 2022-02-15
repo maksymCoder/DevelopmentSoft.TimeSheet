@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TimeSheet.App\TimeSheet.App.csproj" />
-    <ProjectReference Include="..\TimeSheet.DataAccess.csv\TimeSheet.DataAccess.CSV.csproj" />
+    <ProjectReference Include="..\TimeSheet.DataAccess.csv\TimeSheet.DataAccess.csv.csproj" />
   </ItemGroup>
 
 

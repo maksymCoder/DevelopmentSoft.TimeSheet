@@ -9,7 +9,7 @@ namespace TimeSheet.Tests
     class ReportServiceTests
     {
         [Test]
-        public void ReportService_ShouldReturnReport()
+        public void ReportService_ShouldReturnReportPerOneMounth()
         {
             //arrange
             var timeSheetRepositoryMock = new Mock<ITimeSheetRepository>();
@@ -44,10 +44,12 @@ namespace TimeSheet.Tests
                     };
                     for (int i = 1; i < 35; i++)
                     {
-                        date.AddDays(1);
+                       
+                       // date.AddDays(i);
                         timeLogs[i] = new TimeLog
                         {
-                            Date = date,
+                            LastName = expectedLastName,
+                            Date = date.AddDays(i),
                             WorkingHours = 8,
                             Comment = Guid.NewGuid().ToString()
                         };
@@ -79,7 +81,7 @@ namespace TimeSheet.Tests
         }
 
         [Test]
-        public void ReportService_WithoutTimeLogs_ShouldReturnReport()
+        public void ReportService_WithoutTimeLogs_ShouldReturnReportPerOneMounth()
         {
             //arrange
             var timeSheetRepositoryMock = new Mock<ITimeSheetRepository>();
@@ -125,15 +127,15 @@ namespace TimeSheet.Tests
 
         }
         [Test]
-        public void ReportService_TimeLogsOneDay_ShouldReturnReport()
+        public void ReportService_TimeLogs_WithOvertimeForOneDay_ShouldReturnReportPerOneMounth()
         {
             //arrange
             var timeSheetRepositoryMock = new Mock<ITimeSheetRepository>();
             var employeeRepositoryMock = new Mock<IEmployeeRepository>();
 
             var expectedLastName = "Иванов";
-            var expectedTotal = 6000m;  //8/160*120_000
-            var expectedTotalHourse = 8;
+            var expectedTotal = 8m / 160m * 120_000m + (4m / 160m * 120_000m * 2);  
+            var expectedTotalHourse = 12;
 
 
             employeeRepositoryMock
@@ -154,7 +156,7 @@ namespace TimeSheet.Tests
                     {
                         LastName = expectedLastName,
                         Date =  DateTime.Now.AddDays(-1),
-                        WorkingHours = 8,
+                        WorkingHours = 12,
                         Comment =  Guid.NewGuid().ToString()
                     }
                 })
