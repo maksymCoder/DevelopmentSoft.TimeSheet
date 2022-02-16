@@ -12,12 +12,14 @@ namespace TimeSheet.DataAccess.csv
         private const char DELIMETER = ';';
         public void Add(TimeLog timeLog)
         {
-            var dataRow = $"{timeLog.Comment}" +
-                $"{DELIMETER}{timeLog.Date}" +
+            var dataRow = $"{timeLog.Date}" +
                 $"{DELIMETER}{timeLog.LastName}" +
-                $"{DELIMETER}{timeLog.WorkingHours}\n";
+                $"{DELIMETER}{timeLog.WorkingHours}" +              
+                $"{DELIMETER}{timeLog.Comment}\n";
 
-            File.WriteAllText(PATH, dataRow);
+
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            File.AppendAllText(PATH, dataRow, Encoding.GetEncoding(1251));
         }
 
         public TimeLog[] GetTimeLogs(string lastName)
