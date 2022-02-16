@@ -1,4 +1,4 @@
-﻿namespace TimeShieet.Domain.Models
+﻿namespace TimeSheet.Domain.Models
 {
     public interface IEmployeeRepository
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TimeShieet.Domain.Models
+namespace TimeSheet.Domain.Models
 {
     public class StaffEmployee
     {

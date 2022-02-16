@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TimeSheet.Domain.Models;
 using TimeSheet.App.Services;
+using TimeSheet.DataAccess.csv;
 
 namespace TimeSheet.Api
 {
@@ -29,7 +30,9 @@ namespace TimeSheet.Api
         {
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<ITimeSheetService, TimeSheetService>();
-            
+            services.AddTransient<ITimeSheetRepository, TimeSheetRepository>();
+           
+
 
             services.AddControllers();
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using TimeSheet.Domain.Models;
 using TimeSheet.App.Services;
+using Moq;
 
 namespace TimeSheet.Tests
 {
@@ -25,13 +26,18 @@ namespace TimeSheet.Tests
                 Comment = Guid.NewGuid().ToString()
             };
 
-            var service = new TimeSheetService();
+            var timeSheetRepositoryMock = new Mock<ITimeSheetRepository>();
+            timeSheetRepositoryMock
+                .Setup(x => x.Add(timeLog))
+                .Verifiable();
+
+            var service = new TimeSheetService(timeSheetRepositoryMock.Object);
             //act
 
             var result = service.TrackTime(timeLog);
 
             //assert
-
+            timeSheetRepositoryMock.Verify(x => x.Add(timeLog), Times.Once());
             Assert.IsTrue(result);
         }
         [TestCase(25, "")]
@@ -54,12 +60,16 @@ namespace TimeSheet.Tests
                 LastName = lastName,
                 Comment = Guid.NewGuid().ToString()
             };
-            var service = new TimeSheetService();
+            var timeSheetRepositoryMock = new Mock<ITimeSheetRepository>();
+            timeSheetRepositoryMock
+                .Setup(x => x.Add(timeLog))
+                .Verifiable();
+            var service = new TimeSheetService(timeSheetRepositoryMock.Object);
             //act
             var result = service.TrackTime(timeLog);
 
             //assert
-
+            timeSheetRepositoryMock.Verify(x => x.Add(timeLog), Times.Never());
             Assert.IsFalse(result);
         }
     }
