@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using TimeSheet.Domain.Models;
@@ -20,7 +21,23 @@ namespace TimeSheet.DataAccess.csv
         }
         public StaffEmployee GetEmployee(string lastName)
         {
-            return new StaffEmployee();
+            var data = File.ReadAllText(PATH);
+            var dataMembers = data.Split('\n');
+            StaffEmployee staffEmployee = null;
+
+            foreach (var dataMember in dataMembers)
+            {
+                if (dataMember.Contains(lastName){
+                    var fields = dataMember.Split(DELIMETER);
+                    staffEmployee = new StaffEmployee
+                    {
+                        LastName = fields[0],
+                        Salary = decimal.TryParse(fields[1], out var salary) ? salary: 0.0m  
+                    };
+                }
+
+            }
+            return staffEmployee;
         }
     }
 }
