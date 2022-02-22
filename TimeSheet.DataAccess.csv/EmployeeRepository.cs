@@ -27,7 +27,8 @@ namespace TimeSheet.DataAccess.csv
 
             foreach (var dataMember in dataMembers)
             {
-                if (dataMember.Contains(lastName){
+                if (dataMember.Contains(lastName))
+                {
                     var fields = dataMember.Split(DELIMETER);
                     staffEmployee = new StaffEmployee
                     {
